@@ -29,7 +29,7 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnFood()
     {
-        if (collisionController.isAlive)
+        if (collisionController.isAlive && collisionController.isStarted)
         {
             Vector3 spawnPosition = new Vector3(Random.Range(-spawnFoodRangeX, spawnFoodRangeX), transform.position.y, transform.position.z);
             Instantiate(food, spawnPosition, food.transform.rotation);
